@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D7E8FF7B29884BBA0026BA76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FF7A29884BBA0026BA76 /* main.m */; };
+		D7E8FF8629884FAA0026BA76 /* IPSME_MsgEnv.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8FF8329884FAA0026BA76 /* IPSME_MsgEnv.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		D7E8FF7729884BBA0026BA76 /* example-objc-CLI-minimum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "example-objc-CLI-minimum"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E8FF7A29884BBA0026BA76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D7E8FF8329884FAA0026BA76 /* IPSME_MsgEnv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPSME_MsgEnv.m; sourceTree = "<group>"; };
+		D7E8FF8529884FAA0026BA76 /* IPSME_MsgEnv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPSME_MsgEnv.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,7 @@
 		D7E8FF6E29884BBA0026BA76 = {
 			isa = PBXGroup;
 			children = (
+				D7E8FF8129884FAA0026BA76 /* objc-msgenv-NSDNC.git */,
 				D7E8FF7929884BBA0026BA76 /* example-objc-CLI-minimum */,
 				D7E8FF7829884BBA0026BA76 /* Products */,
 			);
@@ -60,6 +64,15 @@
 				D7E8FF7A29884BBA0026BA76 /* main.m */,
 			);
 			path = "example-objc-CLI-minimum";
+			sourceTree = "<group>";
+		};
+		D7E8FF8129884FAA0026BA76 /* objc-msgenv-NSDNC.git */ = {
+			isa = PBXGroup;
+			children = (
+				D7E8FF8529884FAA0026BA76 /* IPSME_MsgEnv.h */,
+				D7E8FF8329884FAA0026BA76 /* IPSME_MsgEnv.m */,
+			);
+			path = "objc-msgenv-NSDNC.git";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E8FF8629884FAA0026BA76 /* IPSME_MsgEnv.m in Sources */,
 				D7E8FF7B29884BBA0026BA76 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@
 
 bool ipsme_handler_NSString_(id id_msg, NSString* nsstr_msg)
 {
-	NSLog(@"ipsme_handler_NSString_: [%@]", nsstr_msg);
+	NSLog(@"ipsme_handler_NSString_: \"%@\"", nsstr_msg);
 
 	if ([nsstr_msg isEqual:@"Discovery"]) {
 		[IPSME_MsgEnv publish:@"Announcement!"];
@@ -23,6 +23,8 @@ bool ipsme_handler_NSString_(id id_msg, NSString* nsstr_msg)
 
 void ipsme_handler_(id id_msg, NSString*)
 {
+	NSLog(@"ipsme_handler_: [%@]", [id_msg class]);
+
 	@try {
 		if ([id_msg isKindOfClass:[NSString class]] && ipsme_handler_NSString_(id_msg, id_msg))
 			return;
@@ -45,8 +47,9 @@ int main(int argc, const char * argv[])
 {
 	@autoreleasepool
 	{
+		NSLog(@"main: Running ...");
+		
 		[IPSME_MsgEnv subscribe:ipsme_handler_];
-
 
 		while (true)
 		{

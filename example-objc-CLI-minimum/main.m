@@ -11,19 +11,18 @@
 
 bool ipsme_handler_NSString_(id id_msg, NSString* nsstr_msg)
 {
-	NSLog(@"ipsme_handler_NSString_: \"%@\"", nsstr_msg);
+	NSLog(@"%s: \"%@\"", __func__, nsstr_msg);
 
-	if ([nsstr_msg isEqual:@"Discovery"]) {
-		[IPSME_MsgEnv publish:@"Announcement!"];
-		return true;
-	}
+	if (! [nsstr_msg isEqual:@"Discovery"])
+		return false;
 	
-	return false;
+	[IPSME_MsgEnv publish:@"Announcement!"];
+	return true;
 }
 
-void ipsme_handler_(id id_msg, NSString*)
+void ipsme_handler_(id id_msg, NSString* nsstr)
 {
-	NSLog(@"ipsme_handler_: [%@]", [id_msg class]);
+	NSLog(@"%s: [%@]", __func__, [id_msg class]);
 
 	@try {
 		if ([id_msg isKindOfClass:[NSString class]] && ipsme_handler_NSString_(id_msg, id_msg))
@@ -40,7 +39,7 @@ void ipsme_handler_(id id_msg, NSString*)
 		return;
 	}
 	
-	NSLog(@"handler_: DROP! %@", [id_msg class]);
+	NSLog(@"%s: DROP! %@", __func__, [id_msg class]);
 }
 
 int main(int argc, const char * argv[])
